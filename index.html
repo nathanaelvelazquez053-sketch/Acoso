@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Guía interactiva para reconocer, prevenir y afrontar el acoso escolar mediante el respeto, la empatía y el diálogo.">
+<title>Convivencia sin acoso | Guía interactiva</title>
+<style>
+:root{
+  --bg:#f4f8fc;--surface:#ffffff;--text:#193047;--muted:#53677a;
+  --blue:#2878a8;--blue2:#dff2fb;--teal:#187f7a;--teal2:#e0f5ef;
+  --yellow:#f4c95d;--yellow2:#fff5d7;--coral:#d85e65;--coral2:#ffeaeb;
+  --line:#d9e4ec;--shadow:0 12px 34px rgba(25,48,71,.09);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+a{color:var(--blue)}
+button{font:inherit;cursor:pointer}
+.skip{position:absolute;left:-999px;top:0;background:var(--surface);padding:.7rem;z-index:20}
+.skip:focus{left:1rem;top:1rem}
+header{background:linear-gradient(125deg,#dff2fb 0%,#e0f5ef 55%,#fff5d7 100%);padding:2.2rem 1rem 1.7rem;border-bottom:1px solid var(--line)}
+.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.45fr .75fr;gap:1.5rem;align-items:center}
+.eyebrow{display:inline-block;padding:.3rem .75rem;border-radius:999px;background:#fff9;color:#21546c;font-weight:800;font-size:.82rem;letter-spacing:.04em}
+h1{font-size:clamp(2.25rem,5vw,4.1rem);line-height:1.05;letter-spacing:-.045em;margin:.8rem 0}
+.lead{font-size:1.08rem;max-width:650px;color:#355168}
+.hero-art{min-height:210px;display:grid;place-items:center}
+.hero-art svg{width:min(100%,310px);height:auto}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+.btn{border:0;border-radius:12px;padding:.75rem 1rem;font-weight:800;display:inline-flex;align-items:center;gap:.45rem;text-decoration:none}
+.btn-primary{background:var(--blue);color:white}.btn-secondary{background:#fff;color:var(--text);border:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1100px;margin:auto;display:flex;gap:.4rem;padding:.65rem 1rem;overflow-x:auto}
+.nav-inner a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:750;padding:.5rem .75rem;border-radius:9px}
+.nav-inner a:hover,.nav-inner a:focus{background:var(--blue2);color:var(--blue)}
+main{max-width:1100px;margin:2rem auto;padding:0 1rem 3rem}
+section{margin:2.3rem 0;scroll-margin-top:90px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;letter-spacing:-.025em;margin:0}
+h3{line-height:1.25;margin:.2rem 0 .55rem}
+.section-intro{color:var(--muted);max-width:720px;margin:.5rem 0 0}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.15rem;box-shadow:var(--shadow)}
+.span-3{grid-column:span 3}.span-4{grid-column:span 4}.span-5{grid-column:span 5}.span-6{grid-column:span 6}.span-7{grid-column:span 7}.span-8{grid-column:span 8}.span-12{grid-column:span 12}
+.icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:1.45rem;margin-bottom:.7rem}
+.blue{background:var(--blue2)}.teal{background:var(--teal2)}.yellow{background:var(--yellow2)}.coral{background:var(--coral2)}
+.muted{color:var(--muted)}.small{font-size:.92rem}
+.pill{display:inline-block;padding:.18rem .55rem;border-radius:7px;background:var(--blue2);color:#205e7e;font-size:.78rem;font-weight:800}
+ul.clean{padding-left:1.2rem;margin:.55rem 0 0}ul.clean li{margin:.32rem 0}
+.callout{border-radius:16px;padding:1.1rem 1.2rem;background:var(--yellow2);border:1px solid #f0dfa6}
+.callout strong{color:#765815}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1rem}
+.step-num{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:white;font-weight:900;margin-bottom:.6rem}
+details{border:1px solid var(--line);background:var(--surface);border-radius:13px;padding:.85rem 1rem}
+details+details{margin-top:.65rem}
+summary{font-weight:800;cursor:pointer}
+details p{margin:.65rem 0 .15rem;color:var(--muted)}
+.scenario{background:linear-gradient(140deg,#fff,#f0f8fc);border:1px solid var(--line);border-radius:20px;padding:1.3rem}
+.options{display:grid;gap:.65rem;margin-top:1rem}
+.option{background:var(--surface);border:1px solid var(--line);padding:.8rem 1rem;border-radius:12px;text-align:left;color:var(--text)}
+.option:hover,.option:focus{border-color:var(--blue);background:var(--blue2)}
+.feedback{margin-top:.8rem;padding:.9rem 1rem;border-radius:12px;display:none}
+.feedback.show{display:block}.feedback.good{background:var(--teal2);border:1px solid #b7e4d6}.feedback.info{background:var(--yellow2);border:1px solid #f0dfa6}
+.quiz-meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:.65rem 0 1rem}.progress-bar{height:100%;width:0;background:var(--teal);transition:width .25s}
+footer{background:#193047;color:#eaf4fa;padding:2rem 1rem}
+.footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer a{color:#bce8fa}
+.project-credits{margin-top:1.3rem;padding-top:1.2rem;border-top:1px solid #ffffff35;width:100%}
+.project-credits h2{font-size:1.15rem;margin:0 0 .55rem;color:#fff}
+.project-credits p{margin:.25rem 0;color:#d8e8f2}
+.project-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.25rem 1.5rem;margin:.5rem 0}
+@media(max-width:520px){.project-authors{grid-template-columns:1fr}}
+#topBtn{position:fixed;right:1rem;bottom:1rem;border:0;border-radius:50%;width:46px;height:46px;background:var(--blue);color:white;font-size:1.2rem;box-shadow:var(--shadow);display:none}
+#topBtn.visible{display:block}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{min-height:120px}.hero-art svg{width:190px}.span-3,.span-4{grid-column:span 6}.span-5,.span-7,.span-8{grid-column:span 12}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.span-3,.span-4,.span-6{grid-column:span 12}.steps{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.hero{gap:.3rem}header{padding-top:1.5rem}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header>
+  <div class="hero">
+    <div>
+      <span class="eyebrow">GUÍA INTERACTIVA · CONVIVENCIA ESCOLAR</span>
+      <h1>Una escuela segura empieza con el respeto.</h1>
+      <p class="lead">Aprende a reconocer el acoso escolar, distinguirlo de un conflicto ocasional y actuar para construir un entorno donde todas las personas puedan participar sin miedo.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#reconocer">Explorar la guía <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-secondary" href="#situaciones">Practicar qué hacer</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 320 230" role="img">
+        <circle cx="160" cy="112" r="95" fill="#fff" opacity=".65"/>
+        <path d="M70 157 Q160 194 250 157" fill="none" stroke="#b4dcd9" stroke-width="12" stroke-linecap="round"/>
+        <path d="M113 85 Q113 58 137 58 Q160 58 160 85 L160 111 Q160 135 137 135 Q113 135 113 111Z" fill="#f1c7a5"/>
+        <path d="M110 81 Q113 49 140 57 Q158 62 160 82 L149 76 L143 66 Q131 82 110 81Z" fill="#193047"/>
+        <path d="M99 167 L103 121 Q107 108 137 108 Q166 108 171 121 L176 167Z" fill="#2878a8"/>
+        <path d="M185 94 Q185 70 205 70 Q225 70 225 94 L225 115 Q225 136 205 136 Q185 136 185 115Z" fill="#c98d68"/>
+        <path d="M182 91 Q186 62 208 68 Q224 72 226 91 L216 84 L208 78 Q200 92 182 91Z" fill="#193047"/>
+        <path d="M174 168 L179 126 Q182 115 205 115 Q228 115 232 126 L237 168Z" fill="#187f7a"/>
+        <path d="M134 151 L151 168 L170 151" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M64 69 L75 80 L95 55" fill="none" stroke="#187f7a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M236 49 L242 61 L255 63 L245 72 L247 85 L236 79 L224 85 L227 72 L217 63 L231 61Z" fill="#f4c95d"/>
+        <circle cx="78" cy="128" r="6" fill="#f4c95d"/><circle cx="256" cy="119" r="5" fill="#d85e65"/>
+      </svg>
+    </div>
+  </div>
+</header>
+<nav aria-label="Navegación de la guía"><div class="nav-inner">
+  <a href="#reconocer">Qué es</a><a href="#tipos">Tipos</a><a href="#senales">Señales</a><a href="#prevenir">Prevenir</a><a href="#situaciones">Situaciones</a><a href="#quiz">Mini cuestionario</a><a href="#ayuda">Pedir ayuda</a>
+</div></nav>
+<main id="contenido">
+  <section id="reconocer">
+    <div class="section-head"><div><h2>01. ¿Qué es el acoso escolar?</h2><p class="section-intro">Es una conducta agresiva que se repite y busca dañar, intimidar o excluir a alguien. Suele existir un desequilibrio de poder que dificulta que la persona afectada pueda defenderse por sí sola.</p></div><span class="pill">Reconocer es el primer paso</span></div>
+    <div class="grid">
+      <article class="card span-4"><div class="icon blue" aria-hidden="true">🔁</div><h3>Se repite</h3><p class="muted">No se trata únicamente de una discusión aislada: las agresiones o humillaciones ocurren de forma reiterada o existe riesgo de que continúen.</p></article>
+      <article class="card span-4"><div class="icon coral" aria-hidden="true">⚖️</div><h3>Hay desigualdad de poder</h3><p class="muted">A la persona afectada le cuesta detener la situación por sí misma, por ejemplo, por presión del grupo, miedo o diferencias de fuerza o influencia.</p></article>
+      <article class="card span-4"><div class="icon yellow" aria-hidden="true">💬</div><h3>Puede causar daño</h3><p class="muted">Puede afectar la seguridad, la autoestima, las relaciones, la asistencia y el desempeño escolar.</p></article>
+      <article class="card span-12"><h3>¿Todo conflicto es acoso?</h3><p class="muted">No necesariamente. Un conflicto ocasional entre personas con posibilidades similares de expresarse y defenderse no es lo mismo que un patrón de intimidación. Sin embargo, cualquier agresión merece atención: no hay que esperar a que se repita para pedir ayuda.</p></article>
+    </div>
+  </section>
+
+  <section id="tipos">
+    <div class="section-head"><div><h2>02. Tipos de acoso</h2><p class="section-intro">Puede ocurrir en el salón, en el patio, en el camino a la escuela o en espacios digitales.</p></div></div>
+    <div class="grid">
+      <article class="card span-3"><div class="icon coral" aria-hidden="true">✋</div><h3>Físico</h3><p>Golpear, empujar, patear, poner el pie o dañar y esconder pertenencias.</p></article>
+      <article class="card span-3"><div class="icon yellow" aria-hidden="true">🗯️</div><h3>Verbal</h3><p>Insultar, amenazar, usar apodos humillantes o burlarse repetidamente.</p></article>
+      <article class="card span-3"><div class="icon teal" aria-hidden="true">👥</div><h3>Social o relacional</h3><p>Excluir intencionalmente, fomentar el rechazo o difundir rumores para aislar.</p></article>
+      <article class="card span-3"><div class="icon blue" aria-hidden="true">📱</div><h3>Ciberacoso</h3><p>Enviar mensajes ofensivos, publicar contenido para humillar o acosar mediante redes y chats.</p></article>
+    </div>
+  </section>
+
+  <section id="senales">
+    <div class="section-head"><div><h2>03. Ejemplos y señales de alerta</h2><p class="section-intro">Las señales no prueban por sí solas que exista acoso, pero sí indican que conviene escuchar y observar con atención.</p></div></div>
+    <div class="grid">
+      <article class="card span-6"><h3>Ejemplos de acoso</h3><ul class="clean">
+        <li>Burlarse repetidamente de la apariencia, forma de hablar o gustos de alguien.</li>
+        <li>Impedir que una persona participe en actividades para humillarla o aislarla.</li>
+        <li>Difundir rumores o mentiras para dañar su reputación.</li>
+        <li>Enviar mensajes ofensivos o compartir publicaciones para ridiculizar.</li>
+        <li>Intimidar a alguien para que entregue objetos o haga algo contra su voluntad.</li>
+      </ul></article>
+      <article class="card span-6"><h3>Posibles señales en una persona afectada</h3><ul class="clean">
+        <li>Tristeza, miedo o preocupación relacionada con la escuela.</li>
+        <li>Aislamiento o pérdida repentina de ganas de participar.</li>
+        <li>Quejas frecuentes de malestar antes de ir a clases.</li>
+        <li>Dificultades para concentrarse o cambios en el rendimiento escolar.</li>
+        <li>Preocupación por revisar mensajes o acudir a determinados lugares.</li>
+      </ul><p class="small muted">Escucha sin culpar, evita sacar conclusiones precipitadas y busca apoyo adulto.</p></article>
+    </div>
+  </section>
+
+  <section id="prevenir">
+    <div class="section-head"><div><h2>04. ¿Cómo podemos prevenirlo?</h2><p class="section-intro">La convivencia mejora cuando el respeto se practica todos los días y el grupo no normaliza las agresiones.</p></div></div>
+    <div class="steps">
+      <article class="step"><div class="step-num">1</div><h3>Escucha</h3><p class="small muted">Presta atención sin interrumpir ni burlarte de lo que otra persona cuenta.</p></article>
+      <article class="step"><div class="step-num">2</div><h3>Habla con respeto</h3><p class="small muted">Expresa desacuerdos sin insultos, amenazas ni humillaciones.</p></article>
+      <article class="step"><div class="step-num">3</div><h3>Practica empatía</h3><p class="small muted">Piensa cómo podría sentirse otra persona antes de actuar o publicar algo.</p></article>
+      <article class="step"><div class="step-num">4</div><h3>No difundas</h3><p class="small muted">No compartas rumores, fotos humillantes ni mensajes agresivos.</p></article>
+      <article class="step"><div class="step-num">5</div><h3>Actúa con seguridad</h3><p class="small muted">Acompaña a quien lo necesita y avisa a una persona adulta de confianza.</p></article>
+    </div>
+    <div class="callout" style="margin-top:1rem"><strong>Recuerda:</strong> ser testigo también importa. No tienes que enfrentarte a un grupo ni ponerte en riesgo para ayudar. Puedes acompañar a la persona afectada, no participar en las burlas y comunicar lo ocurrido a un adulto.</div>
+  </section>
+
+  <section id="situaciones">
+    <div class="section-head"><div><h2>05. ¿Qué harías en esta situación?</h2><p class="section-intro">Lee cada caso y elige una respuesta segura. La página te explicará por qué puede ayudar.</p></div></div>
+    <div class="scenario">
+      <div class="quiz-meta"><span id="scenarioCount">Situación 1 de 3</span><span>Práctica interactiva</span></div>
+      <h3 id="scenarioTitle">En el chat del salón comparten memes para humillar a un compañero.</h3>
+      <p id="scenarioPrompt" class="muted">¿Qué opción ayuda más a detener el daño?</p>
+      <div id="scenarioOptions" class="options">
+        <button class="option" data-correct="false" data-feedback="Compartirlo aumenta su alcance y puede hacer más difícil detener el daño.">Reenviarlos para que el grupo se dé cuenta.</button>
+        <button class="option" data-correct="true" data-feedback="No difundir el contenido, apoyar a la persona afectada y reportarlo a un adulto de confianza reduce la propagación y ayuda a buscar apoyo.">No reenviarlos, apoyar al compañero y pedir ayuda a un adulto.</button>
+        <button class="option" data-correct="false" data-feedback="Aunque la intención sea defender, responder con insultos puede escalar el conflicto. Es mejor actuar con seguridad y buscar apoyo.">Insultar a quienes lo publicaron.</button>
+      </div>
+      <div id="scenarioFeedback" class="feedback" role="status" aria-live="polite"></div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem"><button id="nextScenario" class="btn btn-primary" hidden>Siguiente situación →</button><button id="resetScenario" class="btn btn-secondary">Reiniciar práctica</button></div>
+    </div>
+  </section>
+
+  <section id="conflictos">
+    <div class="section-head"><div><h2>06. Resolver conflictos sin violencia</h2><p class="section-intro">Cuando se trata de un desacuerdo ocasional y las personas pueden participar de forma segura, estos pasos pueden ayudar.</p></div></div>
+    <div class="grid">
+      <article class="card span-4"><div class="icon yellow" aria-hidden="true">🧘</div><h3>1. Mantén la calma</h3><p class="muted">Haz una pausa antes de responder. Si la situación se vuelve agresiva, aléjate hacia un lugar seguro.</p></article>
+      <article class="card span-4"><div class="icon blue" aria-hidden="true">👂</div><h3>2. Escucha ambas versiones</h3><p class="muted">Permite que cada persona explique qué pasó sin interrupciones ni burlas.</p></article>
+      <article class="card span-4"><div class="icon teal" aria-hidden="true">🤝</div><h3>3. Busca acuerdos</h3><p class="muted">Expresa cómo te sientes sin ofender y acuerden una solución respetuosa.</p></article>
+      <article class="card span-12"><h3>Importante: el acoso no se resuelve solo pidiendo a ambas partes que se reconcilien</h3><p class="muted">Si existe intimidación, agresión repetida o desigualdad de poder, no debe tratarse como una simple discusión entre iguales. Se necesita la intervención de personas adultas responsables y medidas para proteger a quien está siendo afectado.</p></article>
+    </div>
+  </section>
+
+  <section id="consecuencias">
+    <div class="section-head"><div><h2>07. ¿Qué consecuencias puede tener?</h2><p class="section-intro">El impacto varía en cada persona. El acoso puede afectar el bienestar y la vida escolar; pedir ayuda pronto puede marcar una diferencia.</p></div></div>
+    <div class="grid">
+      <article class="card span-3"><div class="icon coral" aria-hidden="true">💗</div><h3>Emocionales</h3><p class="small muted">Tristeza, temor, estrés o baja autoestima.</p></article>
+      <article class="card span-3"><div class="icon blue" aria-hidden="true">📚</div><h3>Escolares</h3><p class="small muted">Dificultad para concentrarse, participar o asistir a clases.</p></article>
+      <article class="card span-3"><div class="icon teal" aria-hidden="true">🫂</div><h3>Sociales</h3><p class="small muted">Aislamiento y desconfianza al relacionarse con otras personas.</p></article>
+      <article class="card span-3"><div class="icon yellow" aria-hidden="true">🌱</div><h3>Recuperación</h3><p class="small muted">El apoyo, la protección y un ambiente respetuoso favorecen el bienestar.</p></article>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="section-head"><div><h2>08. Mini cuestionario</h2><p class="section-intro">Comprueba lo aprendido. Puedes repetirlo las veces que quieras.</p></div></div>
+    <div class="card">
+      <div class="quiz-meta"><span id="quizProgressText">Pregunta 1 de 4</span><span id="quizScore">Puntuación: 0</span></div>
+      <div class="progress" aria-label="Progreso del cuestionario"><div id="quizProgress" class="progress-bar"></div></div>
+      <h3 id="quizQuestion">¿Cuál es una característica común del acoso escolar?</h3>
+      <div id="quizOptions" class="options">
+        <button class="option" data-correct="false">Siempre ocurre una sola vez.</button>
+        <button class="option" data-correct="true">Puede repetirse y existir un desequilibrio de poder.</button>
+        <button class="option" data-correct="false">Solo ocurre dentro del salón.</button>
+      </div>
+      <div id="quizFeedback" class="feedback" role="status" aria-live="polite"></div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1rem"><button id="nextQuestion" class="btn btn-primary" hidden>Siguiente pregunta →</button><button id="restartQuiz" class="btn btn-secondary">Volver a empezar</button></div>
+    </div>
+  </section>
+
+  <section id="ayuda">
+    <div class="section-head"><div><h2>09. ¿Dónde pedir ayuda?</h2><p class="section-intro">No tienes que resolver una situación de acoso por tu cuenta. Pedir ayuda no es acusar por capricho: es buscar seguridad y apoyo.</p></div></div>
+    <div class="grid">
+      <article class="card span-4"><div class="icon blue" aria-hidden="true">🏫</div><h3>En la escuela</h3><p>Habla con orientación educativa, tutoría, docentes o la dirección. Describe lo ocurrido con la mayor claridad posible.</p></article>
+      <article class="card span-4"><div class="icon teal" aria-hidden="true">🏠</div><h3>Con una persona adulta</h3><p>Acude a un familiar o adulto de confianza que pueda escucharte y ayudarte a dar seguimiento.</p></article>
+      <article class="card span-4"><div class="icon coral" aria-hidden="true">📝</div><h3>Si ocurre en línea</h3><p>Guarda evidencias de forma segura, bloquea o reporta la cuenta cuando sea adecuado y evita responder con agresiones. No difundas el contenido.</p></article>
+      <article class="card span-12"><h3>Si hay peligro inmediato</h3><p class="muted">Busca a un adulto responsable o acude a un lugar seguro de inmediato. Si alguien está en peligro inmediato, contacta los servicios de emergencia de tu localidad.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout">
+      <h2 style="font-size:1.45rem;margin-bottom:.4rem">¡Di NO al acoso escolar!</h2>
+      <p style="margin:.2rem 0">Una comunidad segura se construye con respeto, inclusión y apoyo mutuo. <strong>Dialogar es mejor que lastimar.</strong></p>
+      <p class="small" style="margin-bottom:0">Escucha · Respeta · Incluye · No difundas agresiones · Pide ayuda</p>
+    </div>
+  </section>
+</main>
+<footer><div class="footer-inner"><div><strong>Convivencia sin acoso</strong><br><span class="small">Material educativo para reflexionar y aprender.</span></div><div class="small">Hecho como página web independiente · <a href="#contenido">Volver al inicio ↑</a></div>
+  <div class="project-credits" aria-label="Datos del proyecto"><h2>Datos del proyecto</h2>
+    <p><strong>Proyecto elaborado por:</strong></p>
+    <div class="project-authors">
+      <p>Cruz Hernandez Leobardo Miguel</p>
+      <p>Damazo Zamudio Galia</p>
+      <p>Perez Ruiz Evelin Vanessa</p>
+      <p>Velazquez Llanes Abdiel Nathanael</p>
+    </div>
+    <p><strong>Grupo:</strong> 3° IV</p>
+    <p><strong>Fecha:</strong> 1er de Noviembre de 2026</p>
+  </div>
+</div></footer>
+<button id="topBtn" aria-label="Volver al inicio" title="Volver al inicio">↑</button>
+<script>
+const scenarioData=[
+ {title:"En el chat del salón comparten memes para humillar a un compañero.",prompt:"¿Qué opción ayuda más a detener el daño?",options:[
+  ["Reenviarlos para que el grupo se dé cuenta.",false,"Compartirlo aumenta su alcance y puede hacer más difícil detener el daño."],
+  ["No reenviarlos, apoyar al compañero y pedir ayuda a un adulto.",true,"No difundir el contenido, apoyar a la persona afectada y reportarlo a un adulto de confianza reduce la propagación y ayuda a buscar apoyo."],
+  ["Insultar a quienes lo publicaron.",false,"Aunque la intención sea defender, responder con insultos puede escalar el conflicto. Es mejor actuar con seguridad y buscar apoyo."]
+ ]},
+ {title:"Un grupo excluye repetidamente a una estudiante y anima a los demás a ignorarla.",prompt:"¿Qué podrías hacer como testigo?",options:[
+  ["Ignorar la situación porque no me ocurre a mí.",false,"La exclusión puede hacer daño. No tienes que exponerte, pero sí puedes apoyar de forma segura y avisar a una persona adulta."],
+  ["Burlarme también para no quedar fuera del grupo.",false,"Sumarse a la burla refuerza la exclusión y puede aumentar el daño."],
+  ["Tratarla con respeto, incluirla si es seguro y contar lo que ocurre a un adulto.",true,"Apoyar sin exponerte y comunicar un patrón de exclusión ayuda a que las personas responsables intervengan."]
+ ]},
+ {title:"Dos compañeros discrepan una vez sobre cómo organizar un trabajo y ambos pueden expresar su opinión.",prompt:"¿Qué respuesta puede ayudar a resolver este conflicto?",options:[
+  ["Escuchar las dos propuestas y acordar una solución.",true,"Cuando ambas partes pueden participar de forma segura, escuchar y negociar puede ayudar a resolver un desacuerdo."],
+  ["Difundir rumores para que los demás tomen partido.",false,"Los rumores dañan la confianza y convierten un desacuerdo en un problema mayor."],
+  ["Amenazar a la otra persona para imponer mi idea.",false,"Las amenazas no resuelven el desacuerdo y pueden convertirlo en una situación insegura."]
+ ]}
+];
+let scenarioIndex=0;
+const $=id=>document.getElementById(id);
+function renderScenario(){
+ const s=scenarioData[scenarioIndex];$("scenarioCount").textContent=`Situación ${scenarioIndex+1} de ${scenarioData.length}`;
+ $("scenarioTitle").textContent=s.title;$("scenarioPrompt").textContent=s.prompt;
+ $("scenarioOptions").innerHTML="";
+ s.options.forEach(([label,correct,feedback])=>{const b=document.createElement("button");b.className="option";b.textContent=label;b.addEventListener("click",()=>{[...$("scenarioOptions").children].forEach(x=>x.disabled=true);const box=$("scenarioFeedback");box.className="feedback show "+(correct?"good":"info");box.textContent=(correct?"Buena elección. ":"Piénsalo de nuevo. ")+feedback;$("nextScenario").hidden=false;$("nextScenario").textContent=scenarioIndex===scenarioData.length-1?"Ver de nuevo ↻":"Siguiente situación →"});$("scenarioOptions").appendChild(b)});
+ $("scenarioFeedback").className="feedback";$("scenarioFeedback").textContent="";$("nextScenario").hidden=true;
+}
+$("nextScenario").addEventListener("click",()=>{scenarioIndex=(scenarioIndex+1)%scenarioData.length;renderScenario()});
+$("resetScenario").addEventListener("click",()=>{scenarioIndex=0;renderScenario()});
+const questions=[
+ {q:"¿Cuál es una característica común del acoso escolar?",o:["Siempre ocurre una sola vez.","Puede repetirse y existir un desequilibrio de poder.","Solo ocurre dentro del salón."],a:1,why:"El acoso suele repetirse y existe una dificultad para que la persona afectada pueda defenderse en igualdad de condiciones."},
+ {q:"¿Cuál es un ejemplo de ciberacoso?",o:["Enviar repetidamente mensajes ofensivos para humillar a alguien.","Pedir ayuda a un docente.","Discrepar respetuosamente en un chat."],a:0,why:"El ciberacoso utiliza medios digitales para agredir, intimidar o humillar."},
+ {q:"Si eres testigo de una agresión, ¿qué opción es más segura?",o:["Grabar y compartirlo para que todos lo vean.","Enfrentar solo a todo el grupo aunque sea peligroso.","Apoyar sin ponerte en riesgo y avisar a un adulto de confianza."],a:2,why:"No difundas el daño ni te expongas. Buscar ayuda adulta es una forma válida de actuar."},
+ {q:"¿Qué ayuda a resolver un desacuerdo ocasional entre personas en condiciones similares?",o:["Escuchar, expresar lo que sientes con respeto y buscar acuerdos.","Difundir rumores.","Amenazar hasta que la otra persona ceda."],a:0,why:"La escucha y el diálogo pueden ayudar en conflictos entre iguales. El acoso repetido requiere intervención y protección."}
+];
+let qIndex=0,score=0,answered=false;
+function renderQuestion(){
+ const q=questions[qIndex];$("quizProgressText").textContent=`Pregunta ${qIndex+1} de ${questions.length}`;$("quizScore").textContent=`Puntuación: ${score}`;$("quizProgress").style.width=`${qIndex/questions.length*100}%`;$("quizQuestion").textContent=q.q;$("quizOptions").innerHTML="";
+ q.o.forEach((label,i)=>{const b=document.createElement("button");b.className="option";b.textContent=label;b.addEventListener("click",()=>{if(answered)return;answered=true;const ok=i===q.a;if(ok)score++;[...$("quizOptions").children].forEach((x,j)=>{x.disabled=true;if(j===q.a)x.style.borderColor="#187f7a"});$("quizScore").textContent=`Puntuación: ${score}`;$("quizProgress").style.width=`${(qIndex+1)/questions.length*100}%`;const f=$("quizFeedback");f.className="feedback show "+(ok?"good":"info");f.textContent=(ok?"¡Correcto! ":"No exactamente. ")+q.why;$("nextQuestion").hidden=false;$("nextQuestion").textContent=qIndex===questions.length-1?"Ver resultado":"Siguiente pregunta →"});$("quizOptions").appendChild(b)});
+ $("quizFeedback").className="feedback";$("quizFeedback").textContent="";$("nextQuestion").hidden=true;answered=false;
+}
+$("nextQuestion").addEventListener("click",()=>{if(qIndex<questions.length-1){qIndex++;renderQuestion()}else{const f=$("quizFeedback");f.className="feedback show good";f.textContent=`Terminaste con ${score} de ${questions.length} respuestas correctas. ${score===questions.length?"¡Excelente!":score>=2?"Buen trabajo: repasa las secciones y vuelve a intentarlo.":"Repasa la guía y vuelve a intentarlo; aprender también es practicar."}`;$("nextQuestion").hidden=true;$("quizProgress").style.width="100%";}});
+$("restartQuiz").addEventListener("click",()=>{qIndex=0;score=0;renderQuestion()});
+window.addEventListener("scroll",()=>{$("topBtn").classList.toggle("visible",window.scrollY>500)});
+$("topBtn").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+renderScenario();renderQuestion();
+</script>
+</body>
+</html>
